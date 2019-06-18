@@ -30,14 +30,17 @@ class Server {
     config() {
         this.app.set('port', process.env.PORT || 3000);
         this.app.use(morgan('dev'));
-        // this.app.use(cors());
+        this.app.use(cors());
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: false }));
     }
 
     routes() {
-        this.app.use('/api/games', cors(corsOptions), gameRoute);
-        this.app.use('/api/ips', cors(corsOptions), ipUserRoute);
+        // this.app.use('/api/games', cors(corsOptions), gameRoute);
+        // this.app.use('/api/ips', cors(corsOptions), ipUserRoute);
+        
+        this.app.use('/api/games', gameRoute);
+        this.app.use('/api/ips', ipUserRoute);
     }
 
     // 
