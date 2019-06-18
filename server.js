@@ -7,7 +7,7 @@ const gameRoute = require('./routes/game.route'),
     ipUserRoute = require('./routes/ipUser.route');
 //
 
-var domainListHeroku = ['https://gamescode.herokuapp.com', 'http://localhost:4201']
+var domainListHeroku = ['https://gamescode.herokuapp.com'];
 var corsOptions = {
     origin: function (origin, callback) {
         if (domainListHeroku.indexOf(origin) !== -1) {
