@@ -7,7 +7,7 @@ const gameRoute = require('./routes/game.route'),
     ipUserRoute = require('./routes/ipUser.route');
 //
 
-var domainListHeroku = ['https://gamescode.herokuapp.com'];
+var domainListHeroku = ['https://gamescode.herokuapp.com', 'https://linkscode.herokuapp.com'];
 var corsOptions = {
     origin: function (origin, callback) {
         if (domainListHeroku.indexOf(origin) !== -1) {
@@ -30,7 +30,7 @@ class Server {
     config() {
         this.app.set('port', process.env.PORT || 3000);
         this.app.use(morgan('dev'));
-        this.app.use(cors());
+        // this.app.use(cors());
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: false }));
     }
