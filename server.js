@@ -36,11 +36,8 @@ class Server {
     }
 
     routes() {
-        // this.app.use('/api/games', cors(corsOptions), gameRoute);
-        // this.app.use('/api/ips', cors(corsOptions), ipUserRoute);
-        
-        this.app.use('/api/games', gameRoute);
-        this.app.use('/api/ips', ipUserRoute);
+        this.app.use('/api/games', cors(corsOptions), gameRoute);
+        this.app.use('/api/ips', cors(corsOptions), ipUserRoute);
     }
 
     // 
