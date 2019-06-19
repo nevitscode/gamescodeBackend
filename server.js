@@ -9,8 +9,7 @@ const gameRoute = require('./routes/game.route'),
 
 var domainListHeroku = [
     'https://gamescode.herokuapp.com',
-    'https://linkscode.herokuapp.com',
-    'http://localhost:4200'
+    'https://linkscode.herokuapp.com'
 ];
 var corsOptions = {
     origin: function (origin, callback) {
